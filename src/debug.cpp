@@ -10,14 +10,15 @@
 
 void debug(const char *format, ...)
 {
-    char buffer[BUFF_SIZE] = {0};
-    va_list argp;
-    va_start(argp, format);
-    vsnprintf(buffer, BUFF_SIZE, format, argp);
-    va_end(argp);
-
     if (DEBUG == true)
     {
+
+        char buffer[BUFF_SIZE] = {0};
+        va_list argp;
+        va_start(argp, format);
+        vsnprintf(buffer, BUFF_SIZE, format, argp);
+        va_end(argp);
+
         Serial.println(buffer);
     }
 }
